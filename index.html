@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Career Strategy: Bangalore Market</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#f8f6f0] text-[#333333] min-h-screen flex flex-col">
+
+    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#2b6777]">AI Strategy Board</h1>
+            <div id="auth-ui">
+                <button onclick="showLogin()" class="bg-[#2b6777] text-white px-4 py-2 rounded-lg text-sm">Login to Track Progress</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="app-content" class="flex-grow max-w-6xl mx-auto px-6 py-8 w-full">
+        <div id="market-section" class="section">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <canvas id="skillsBarChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/charts.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
