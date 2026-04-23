@@ -1,15 +1,15 @@
 const MOCK_USER = { username: "samarth", password: "123" };
 
 function showLogin() {
-    const username = prompt("Enter Username (Try: samarth)");
-    const password = prompt("Enter Password (Try: 123)");
+    const username = prompt("Username (samarth):");
+    const password = prompt("Password (123):");
 
     if (username === MOCK_USER.username && password === MOCK_USER.password) {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("user", "Samarth");
         renderAuthUI();
     } else {
-        alert("Login Failed!");
+        alert("Invalid credentials!");
     }
 }
 
@@ -18,11 +18,11 @@ function renderAuthUI() {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const user = localStorage.getItem("user");
 
-    if (isLoggedIn === "true") {
+    if (isLoggedIn === "true" && authUI) {
         authUI.innerHTML = `
             <div class="flex items-center gap-4">
                 <span class="text-sm font-medium">Hello, ${user} 👋</span>
-                <button onclick="logout()" class="text-red-500 text-sm">Logout</button>
+                <button onclick="logout()" class="text-red-500 text-xs hover:underline">Logout</button>
             </div>
         `;
     }
@@ -33,5 +33,5 @@ function logout() {
     location.reload();
 }
 
-// Check status on load
+// Initial UI check
 document.addEventListener('DOMContentLoaded', renderAuthUI);
